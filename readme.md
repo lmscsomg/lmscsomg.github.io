@@ -1,0 +1,1 @@
+#Ideas worth spreading, thoughts worth recording.
