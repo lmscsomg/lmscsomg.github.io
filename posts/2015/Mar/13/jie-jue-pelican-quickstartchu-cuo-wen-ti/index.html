@@ -60,7 +60,7 @@
 </pre></div>
 
 
-<p>原因可能是与python 2.7的兼容问题,在<code>/Library/Python/2.7/site-packages/pelican</code>下修改<code>readers.py</code>即可:</p>
+<p>原因可能是与python 2.7的兼容问题,在<code>/Library/Python/2.7/site-packages/pelican</code>下修改<code>readers.py</code>即可(<strong>注意要先修改readers.py的权限</strong>):</p>
 <div class="highlight"><pre><span class="cp">#from six.moves.html_parser import HTMLParser</span>
 <span class="n">from</span> <span class="n">HTMLParser</span> <span class="n">import</span> <span class="n">HTMLParser</span>
 </pre></div></div>
