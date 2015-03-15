@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tags &mdash; Victor's blog</title>
+  <title>解决pelican-quickstart出错问题 &mdash; Victor's blog</title>
   <meta name="author" content="Victor">
 
 
@@ -42,16 +42,44 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Blog Tags</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">解决pelican-quickstart出错问题</h1>
+    <p class="meta">
+<time datetime="2015-03-13T23:37:00+08:00" pubdate>Fri 13 March 2015</time>    </p>
+</header>
 
-	<p>
-		<a href="/tag/bugs.html">bugs</a> (1)<br>
-		<a href="/tag/pelican.html">pelican</a> (1)<br>
-	</p>
-	</article>
+  <div class="entry-content"><p>博客框架pelican更新后，在目录下执行<code>pelican-quickstart</code>会报错：</p>
+<div class="highlight"><pre><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">html_parser</span>
+</pre></div>
+
+
+<p>我的环境是:</p>
+<div class="highlight"><pre><span class="n">OS</span> <span class="n">X</span> <span class="n">Yosemite</span> <span class="p">(</span><span class="n">Version</span> <span class="mf">10.10.2</span><span class="p">)</span>
+<span class="n">python</span> <span class="mf">2.7.6</span>
+</pre></div>
+
+
+<p>原因可能是与python 2.7的兼容问题,在<code>/Library/Python/2.7/site-packages/pelican</code>下修改<code>readers.py</code>即可(<strong>注意要先修改readers.py的权限</strong>):</p>
+<div class="highlight"><pre><span class="cp">#from six.moves.html_parser import HTMLParser</span>
+<span class="n">from</span> <span class="n">HTMLParser</span> <span class="n">import</span> <span class="n">HTMLParser</span>
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Victor
+    </span>
+  </span>
+<time datetime="2015-03-13T23:37:00+08:00" pubdate>Fri 13 March 2015</time>  <span class="categories">
+    <a class='category' href='/category/configuration.html'>configuration</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/pelican.html">pelican</a>,    <a class="category" href="/tag/bugs.html">bugs</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 <aside class="sidebar">
   <section>
