@@ -55,9 +55,8 @@
 <p>QQ，班群信息，燥热之气扑面。阿里员工级别啊,听说哪哪android开发实习月薪12K啊......欲望，像一只少女的手，轻轻撩拨着一颗颗蠢蠢欲动的心。</p>
 <p>打下几行字，又删了，想想还是算了。何必泼一盆冷水，坏了某些人兴致，招得一身嫌。</p>
 <p>QQ，群信息，习惯性地看看一群准备进FLAG的牛人在干啥，嗯，几个人在讨论题目和相关算法。</p>
-<p>我明白，优秀是有理由的。
-<!--more-->
-前几天还忿忿地写了一篇吐槽一些同学思维标签化，耽溺于幻想还鄙夷一些人和公司的博文，看了看，还是删了。价值决定价格，有些人暂时是不会明白的。</p>
+<p>我明白，优秀是有理由的。</p>
+<p>前几天还忿忿地写了一篇吐槽一些同学思维标签化，耽溺于幻想还鄙夷一些人和公司的博文，看了看，还是删了。价值决定价格，有些人暂时是不会明白的。</p>
 <p>看了看明天的计划列表，扫了眼右上角的时间，又是全新的一天。</p>
 <p>潜下心来，闭关修炼。</p>
 <p>你若盛开，清风自来。</p></div>
@@ -98,12 +97,12 @@
 
   <div class="entry-content"><p>最近用<a href="https://readthedocs.org/">Read The Docs</a>整理笔记，感觉还不错，同时，<a href="https://github.com/snide/sphinx_rtd_theme">sphinx主题</a>对移动端的支持非常好。将整个文档部署到github上，我就可以随时随地查阅，非常方便。</p>
 <p>Read The Docs支持Markdown格式，我自己用了下，感觉配套主题没有使用reStructuredText格式的配套主题效果好。reStructedText相对于Markdown而言，也更为强大，唯一的缺点就是没有类似Mou这样的配套应用（用Mou写Markdown着实方便啊）。</p>
+<!--more-->
+
 <p>这里记录一下将本地文档部署到github上出现的问题：如果按sphinx主题的Readme教程，本地完全没有问题，但是在readthedocs部署时会报错，会报如下错误:</p>
 <div class="highlight"><pre><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">sphinx_rtd_theme</span>
 </pre></div>
 
-
-<!--more-->
 
 <p>看github上的Issues列表，貌似是本地和部署到Read The Docs会有冲突(因为readthedocs默认使用这个主题？)，所以我们需要在<code>config.py</code>里进行判别。</p>
 <div class="highlight"><pre><span class="n">import</span> <span class="n">sphinx_rtd_theme</span>
