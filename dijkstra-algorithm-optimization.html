@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Dijkstra Algorithm Optimization &mdash; Victor's blog</title>
+  <meta name="author" content="Victor">
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">Victor's blog</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+
+<ul class="main-navigation">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Dijkstra Algorithm Optimization</h1>
+    <p class="meta">
+<time datetime="2014-03-19T16:57:39+08:00" pubdate>Wed 19 March 2014</time>    </p>
+</header>
+
+  <div class="entry-content"><p>I chose a course called "Programming Design And Algorithm Discussion" this semester.We twenty seven students were divided into nine groups and each group was required to do a thesis presentation after reading several papers about the unique project.I think this course may be very wonderful!
+Our first project is to optimize the Dijkstra algorithm.Since it's our first time to do the project,the teacher recommonded nine papers and I chose &lt;&lt; A faster algorithm for the single source shortest path problem with few distinct positive lengths&gt;&gt;(So long is the title...).Here,I want to share some of my understanding about the paper.</p>
+<h3>How to optimizate an algorithm normally?</h3>
+<ol>
+<li>Use more memory to reduce the time complexity</li>
+<li>Change the data struct to optimize(like use heap)
+...</li>
+</ol>
+<p>The paper provides an effcient algorithm in the case where <strong>the number of distinct lengths is small</strong>.We consider a graph with n vertices, m edges and K distinct edge lengths, our algorithm runs in O (m)time if nK&lt;=2m, and O (mlog(nK/m)) time, otherwise.</p>
+<h3>The implementation of this algorithm</h3>
+<h4><strong>1. nk&lt;=2m</strong></h4>
+<p>The algorithm uses the first way mentioned before to optimizate.It constructs K arrays to store the edges the length of which is same.Each array directs to  K distinct edge lengths.We let the set S to store the vertex which has been labeled and the set T to store the others.</p>
+<ol>
+<li>Put the start vertex(named it s) into S</li>
+<li>Add the edges related to S to those K arrays according to their lengths
+  (the way it works is just like <strong>hash</strong>)</li>
+<li>Find the minimum lengths in these K arrays,<strong>UPDATE</strong>.</li>
+<li>Add the vertex(named it j) related the minimum lengths to S,and remove it in T</li>
+<li>Just treat j as s, add the edges and find the mininmum until the set T is empty.</li>
+</ol>
+<p>Pay attention to the UPDATE operation:
+The K arrays has a pointer in each one to update the lengths left.
+1. If we have chose the edge, and the array isn't empty, pointer points to the next.
+2. If the two vertexs related to the next edge are both in the set S, that means we can't choose it ,so the pointer points to the next.</p>
+<h5>Running time</h5>
+<ol>
+<li>We need to put all m edges into the K arrays--O(m)</li>
+<li>Each time we put a vertex into S,we need to find the minimum in these K arrays and we have n vertexs in all--O(nk)
+So,the total running time is O(m+nk);</li>
+</ol>
+<h4><strong>2. nk&gt;2m </strong></h4>
+<p>The algorithm is based on the former algorithms and it uses the second way mentioned before to optimizate.The optimization is on the operation the find the minimum value in K different lengths.
+It uses heap to find the minunum.It divided the edges in K arrays which is pointed by the points into h heaps and find the minimum between h heaps.Here`h=m/n'(I don't understand the reason it just construct only one heap.).Each time we select an edge, we need to delete it from the heap.</p>
+<h5>Running time</h5>
+<ol>
+<li>the time running time on the delete and insert in heap is O(logn)</li>
+<li>find the minimum in heap is O(1)
+So,h heaps find the minimum is O(h).We need to update m edges in heap in total and each heap has nK/m elements,the time is O(mlog(nK/m)).In all, the running time is O(mlog(nK/m).</li>
+</ol>
+<h3>Other ways to optimizate</h3>
+<p>Since other students read different papers,here I list the other ways to optimizate.
+1. Use Fibonacci heap.(use special data struct.A great way)
+2. Use parallel calculation.(I just heard of this but know little about it,it seems to be very interesting)
+3. Use operations like pruning in graph.(This idea is from the characteristic of the graph,but the optimization is not obvious and it even works worse in some time)</p>
+<h3>Conclusion</h3>
+<p>The optimizaions on Dijkstra algorithm almost concentrates on finding the minimum length when we update the lengths.Here we always use heap like Fibonacci heap,a more appropriate data struct to optimizate and we can also use parallel calculations,a special programming way.</p>
+<p>PS:Since the report is close to the acadamical presentation,I want to try to use the LaTeX which I want to learn long long ago to do my slides.Wish a great presentation in the next project.</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Victor
+    </span>
+  </span>
+<time datetime="2014-03-19T16:57:39+08:00" pubdate>Wed 19 March 2014</time>  <span class="categories">
+    <a class='category' href='/category/blog.html'>blog</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/algorithm.html">algorithm</a>,    <a class="category" href="/tag/course.html">course</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="/yi-xie-lao-tao.html">一些唠叨</a>
+      </li>
+      <li class="post">
+          <a href="/jie-jue-pelican-quickstartchu-cuo-wen-ti.html">解决pelican-quickstart出错问题</a>
+      </li>
+      <li class="post">
+          <a href="/shi-yong-readthedocszheng-li-wen-dang.html">使用readthedocs整理文档</a>
+      </li>
+      <li class="post">
+          <a href="/dijkstra-algorithm-optimization.html">Dijkstra Algorithm Optimization</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="/category/blog.html">blog</a></li>
+        <li><a href="/category/configuration.html">configuration</a></li>
+        <li><a href="/category/life.html">life</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="/tag/lao-tao.html">唠叨</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/algorithm.html">algorithm</a>,    <a href="/tag/readthedocs.html">readthedocs</a>,    <a href="/tag/bugs.html">bugs</a>,    <a href="/tag/course.html">course</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2014&ndash;2015  Victor &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</body>
+</html>
