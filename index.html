@@ -45,6 +45,25 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/mit-6828_lab-1.html">MIT-6.828_Lab-1</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-03-30T00:00:00+08:00" pubdate>Mon 30 March 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>因为学过微机和汇编，所以很多概念还是挺容易理解的。但纸上得来终觉浅，躬行之后还是受益良多的，比如对指针、对esp、ebp的概念理解。当然既然是操作系统课程，对很多操作系统底层的理解也更深入了。</p>
+<h2><strong>PC Bootstrap</strong></h2>
+<p>汇编使用的是AT&amp;T格式的，和我们熟悉的Intel的那一套有一点区别，但是看手册理解起来很快（国外好像都喜欢用AT&amp;T这一套的，比如CSAPP就用的是AT&amp;T格式的）。</p>
+<p>8086实模式，实际地址CS*16+IP。80286引入保护模式，分段机制。80386采用32位架构，段页式内存管理。为兼容性，RAM分为底部640KB以及0x00100000上面部分，而Lab只使用物理内存前256MB。</p>
+<h2><strong>ROM BIOS</strong></h2>
+<p>PC启动后，BIOS被执行，第一条指令CS:f000,IP:fff0,跳转到前面的地址执行指令......(有点蛋疼啊，BIOS第一条指令后，只剩16个字节了，然后跳到前面去了，估计是历史原因= =。) 然后初始化设备和PCI总线后，搜索可以启动的设备如软盘、硬盘、CD-ROM等，开始读取boot loader ...</p></div>
+  <footer>
+    <a rel="full-article" href="/mit-6828_lab-1.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/mit-6828ke-cheng.html">MIT-6.828课程</a>
       </h1>
     <p class="meta">
@@ -157,6 +176,9 @@ Our first project ...</p></div>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="/mit-6828_lab-1.html">MIT-6.828_Lab-1</a>
+      </li>
+      <li class="post">
           <a href="/mit-6828ke-cheng.html">MIT-6.828课程</a>
       </li>
       <li class="post">
@@ -167,9 +189,6 @@ Our first project ...</p></div>
       </li>
       <li class="post">
           <a href="/shi-yong-readthedocszheng-li-wen-dang.html">使用readthedocs整理文档</a>
-      </li>
-      <li class="post">
-          <a href="/dijkstra-algorithm-optimization.html">Dijkstra Algorithm Optimization</a>
       </li>
     </ul>
   </section>
@@ -187,7 +206,7 @@ Our first project ...</p></div>
 
   <section>
   <h1>Tags</h1>
-    <a href="/tag/lao-tao.html">唠叨</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/algorithm.html">algorithm</a>,    <a href="/tag/readthedocs.html">readthedocs</a>,    <a href="/tag/bugs.html">bugs</a>,    <a href="/tag/course.html">course</a>  </section>
+    <a href="/tag/lao-tao.html">唠叨</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/mit-6828.html">MIT-6.828</a>,    <a href="/tag/algorithm.html">algorithm</a>,    <a href="/tag/readthedocs.html">readthedocs</a>,    <a href="/tag/bugs.html">bugs</a>,    <a href="/tag/course.html">course</a>  </section>
 
 
 

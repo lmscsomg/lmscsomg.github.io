@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>MIT-6.828课程 &mdash; Victor's blog</title>
+  <title>MIT-6.828_Lab-1 &mdash; Victor's blog</title>
   <meta name="author" content="Victor">
 
 
@@ -44,18 +44,27 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">MIT-6.828课程</h1>
+      <h1 class="entry-title">MIT-6.828_Lab-1</h1>
     <p class="meta">
 <time datetime="2015-03-30T00:00:00+08:00" pubdate>Mon 30 March 2015</time>    </p>
 </header>
 
-  <div class="entry-content"><p>这个学期学习操作系统课程，教学质量实在无法令人满意。无论是课堂内容还是实验内容，都远远低于我的期望值，遂跟随MIT-6.828课程进行学习。</p>
-<p>整个课程分为两个模块，一个是对xv6操作系统的学习，平时的homework和这个有关。另一个是自己做一个操作系统（当然一开始给了一些非常底层的代码，并且省略了一部分需要你自己完成），即所谓的Lab。</p>
-<p>目前我只在做Lab这个模块，感觉受益匪浅。这个系列的Lab的一大优点就是自带测评，可以执行<code>make grade</code>来自动对自己所做的Lab评分。</p>
-<p>目录:</p>
-<ol>
-<li>MIT-6.828_Lab-1: Booting a PC</li>
-</ol></div>
+  <div class="entry-content"><p>因为学过微机和汇编，所以很多概念还是挺容易理解的。但纸上得来终觉浅，躬行之后还是受益良多的，比如对指针、对esp、ebp的概念理解。当然既然是操作系统课程，对很多操作系统底层的理解也更深入了。</p>
+<h2><strong>PC Bootstrap</strong></h2>
+<p>汇编使用的是AT&amp;T格式的，和我们熟悉的Intel的那一套有一点区别，但是看手册理解起来很快（国外好像都喜欢用AT&amp;T这一套的，比如CSAPP就用的是AT&amp;T格式的）。</p>
+<p>8086实模式，实际地址CS*16+IP。80286引入保护模式，分段机制。80386采用32位架构，段页式内存管理。为兼容性，RAM分为底部640KB以及0x00100000上面部分，而Lab只使用物理内存前256MB。</p>
+<h2><strong>ROM BIOS</strong></h2>
+<p>PC启动后，BIOS被执行，第一条指令CS:f000,IP:fff0,跳转到前面的地址执行指令......(有点蛋疼啊，BIOS第一条指令后，只剩16个字节了，然后跳到前面去了，估计是历史原因= =。) 然后初始化设备和PCI总线后，搜索可以启动的设备如软盘、硬盘、CD-ROM等，开始读取boot loader，赠予控制权，功成身退。 </p>
+<h2><strong>The Boot Loader</strong></h2>
+<p>软盘和硬盘被分割成了一个个大小为512字节的扇区，扇区也是最小的读写单位。实验是从硬盘加载OS，则硬盘的第一个扇区被称作”boot sector”，boot loader的可执行程序就放在这个扇区里。实验中，当BIOS找到可启动的硬盘后，就将512字节的启动扇区的内容装载到物理内存的0x7c00到0x7dff的位置，然后执行一个jmp指令到CS:IP为0x0000:0x7c00，这个地址其实是任意的，但是已经成为PC默认标准了。</p>
+<p><code>boot.S</code>注释详尽，主要负责real mode到protect mode的跳转，保护模式下才可以使用1MB以上的地址空间，最后会跳转到<strong>bootmain</strong>。 </p>
+<p>这部分提到了load address和physical address。加载地址即程序实际被加载到的物理内存地址，例如boot loader被BIOS固定加载到0x7c00，这就是它的物理地址；链接地址是程序自己认为自己所在的地址。</p>
+<h2><strong>Loading the Kernal</strong></h2>
+<p>上面提到的<strong>bootmain</strong>是在<code>main.c</code>中的函数，而<code>main.c</code>用来加载内核可执行程序。<code>boot.S</code>和<code>main.c</code>放在第一个扇区中，内核镜像存放在第二个扇区中。<code>bootmain</code>接管后读取内核并跳入。  </p>
+<p><code>bootmain</code>把头读入进来放到0x10000位置，指令数据部分会根据加载信息中的p_pa放置到正确的物理内存地址，最后调用头中存放的内核入口地址，ELFHDR-&gt;e_entry，将控制权交给了内核。</p>
+<p><em>内核可执行程序是ELF格式，它是Linux下的可执行文件的格式，ELF可以简单的被认为是由含有加载信息的头和程序部分组成，详细的头情况可以在inc/elf.h中定义的一些Header结构体中看到。程序部分主要由.text、.rodata、.data、.bss等组成。</em>  </p>
+<h2><strong>The Kernal</strong></h2>
+<p>kernel的入口为kernel/entry.S</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -67,7 +76,7 @@
     <a class='category' href='/category/study.html'>study</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/course.html">course</a>  </span>
+    <a class="category" href="/tag/mit-6828.html">MIT-6.828</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
