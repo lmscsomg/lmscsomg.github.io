@@ -71,6 +71,7 @@
 <p>从这部分的实验中，我收获比较大。需要理解函数调用中ebp,eip和esp的具体使用情况，感觉CSAPP上讲的比较清楚。</p>
 <p>需要对回溯信息的跟进一步的完善，根据提示函数在<code>kern/kdebug.c</code>中，这里面涉及到对<strong>stab</strong>的理解（因为头文件中有关于stab的文件）。stab表示sybol table，即符号表，.stabstr为符号表中的字符串部分（比如文件名之类），很显然执行汇编代码时它们是没用的，它们的价值是用于调试，显示错误信息。我们可以在<code>inc/stab.h</code>中看到具体的细节，注意到<code>N_SLINE</code>以及<code>stab</code>自身的结构，在函数中的Hint下理解<code>stab_binsearch</code>,模仿上下文的函数即可完成（我这里一开始老师拿不了分，行号总是出错，就是因为上下函数理解不到位，赋值应该用stab中特定的item赋值）。</p>
 <p>注意Exercise 12中的提示，包括<code>debuginfo_eip</code>和<code>cprintf</code>的输出格式，应该就能顺利完成这个Lab最后的Exercise了。</p>
+<p>整个实验很赞的一点就是提供了评分的脚本，即便是自学，效果同样甚佳。</p>
 <p><img alt="Lab_1" src="./Lab1.png" title="=600x620" /></p></div>
     <footer>
 <p class="meta">
