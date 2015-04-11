@@ -45,6 +45,29 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/cmuke-cheng-xin-xi-zheng-li.html">CMU课程信息整理</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-04-11T00:00:00+08:00" pubdate>Sat 11 April 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>我目前看到的对于计算机课程Lab的推荐(不是网易云课堂或者Coursera看视频的那种)，都是MIT和Standford这两所学校的，遂很好奇CMU这所计算机顶级学府(Orz...求收留)所开设的课程，在github上搜索到了对于部分课程的整理，见下面的<strong>附</strong>。</p>
+<h2>一些感想</h2>
+<p>我是大二时从一位牛人简历里才发现其实可以跟国外高校的Lab的（原谅我那时见识短浅并且还没开始上知乎= =。），他是在MIT-6.828基础上做了一个操作系统，当时感觉就是好酷炫orz......</p>
+<p>因为对分布式计算感兴趣，遂在去年准备跟MIT-6.824的Lab，Go语言开发，涉及paper阅读，工程量也很大，从schedule的时间排布来看，估计又是一个需要天天熬夜的Lab，然后因为自己这边的很多事，整个Lab搁置了......(其实就是拖延症好嘛= =。)</p>
+<p>然后今年才算真正跟了MIT操作系统的Lab，整个Lab1花了一整个下午和晚上，这还是在有参考的情况下，并且Lab1给了相当多的提示。整个Lab的题目难度，感觉循序渐进，像是在探险一样，并且是环环相扣的，没想到做计算机的Lab也能这么刺激。</p>
+<p>做完Lab1感慨真的是非常非常多啊，国内外计算机本科教育的差距真是......我引用<strong>附</strong>中的一些上过CMU课程的同学的话，即可窥见一二了：</p>
+<h3>从代码量而言：</h3>
+<h4>有这个样子的：</h4>
+<blockquote>
+<p>代码量差不多一万多行C的样子，但是重要的是debug真心恶心，各种race condition呀，GDB一行一行的找BUG。总的来说是很好的一门课 ...</p></blockquote></div>
+  <footer>
+    <a rel="full-article" href="/cmuke-cheng-xin-xi-zheng-li.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/mit-6828_lab-1.html">MIT-6.828_Lab-1</a>
       </h1>
     <p class="meta">
@@ -122,52 +145,8 @@
 <span class="n">from</span> <span class="n">HTMLParser</span> <span class="n">import</span> <span class="n">HTMLParser</span>
 </pre></div></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/shi-yong-readthedocszheng-li-wen-dang.html">使用readthedocs整理文档</a>
-      </h1>
-    <p class="meta">
-<time datetime="2014-10-26T00:00:00+08:00" pubdate>Sun 26 October 2014</time>    </p>
-</header>
-
-  <div class="entry-content"><p>最近用<a href="https://readthedocs.org/">Read The Docs</a>整理笔记，感觉还不错，同时，<a href="https://github.com/snide/sphinx_rtd_theme">sphinx主题</a>对移动端的支持非常好。将整个文档部署到github上，我就可以随时随地查阅，非常方便。</p>
-<p>Read The Docs支持Markdown格式，我自己用了下，感觉配套主题没有使用reStructuredText格式的配套主题效果好。reStructedText相对于Markdown而言，也更为强大，唯一的缺点就是没有类似Mou这样的配套应用（用Mou写Markdown着实方便啊）。</p>
-<!--more-->
-
-<p>这里记录一下将本地文档部署到github上出现的问题：如果按sphinx主题的Readme教程，本地完全没有问题，但是在readthedocs部署时会报错，会报如下错误:</p>
-<div class="highlight"><pre><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">sphinx_rtd_theme</span>
-</pre></div>
-
-
-<p>看github上的Issues列表，貌似是本地和部署到Read The Docs会有冲突(因为readthedocs默认使用这个主题？)，所以我们需要在<code>config.py</code>里进行判别。</p>
-<div class="highlight"><pre><span class="n">import</span> <span class="n">sphinx_rtd_theme</span>
-<span class="n">html_theme</span> <span class="o">=</span> <span class="s">&quot;sphinx_rtd_theme&quot;</span>
-<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">sphinx_rtd_theme</span><span class="p">.</span><span class="n">get_html_theme_path</span><span class="p">()]</span>
-</pre></div>
-
-
-<p>上面是本地上执行时用的，如果要在Read The ...</p></!--more--></div>
-  <footer>
-    <a rel="full-article" href="/shi-yong-readthedocszheng-li-wen-dang.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/dijkstra-algorithm-optimization.html">Dijkstra Algorithm Optimization</a>
-      </h1>
-    <p class="meta">
-<time datetime="2014-03-19T16:57:39+08:00" pubdate>Wed 19 March 2014</time>    </p>
-</header>
-
-  <div class="entry-content"><p>I chose a course called "Programming Design And Algorithm Discussion" this semester.We twenty seven students were divided into nine groups and each group was required to do a thesis presentation after reading several papers about the unique project.I think this course may be very wonderful!
-Our first project ...</p></div>
-  <footer>
-    <a rel="full-article" href="/dijkstra-algorithm-optimization.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
+    <a class="prev" href="/index2.html">&larr; Older</a>
 
   <br />
 </div></div>
@@ -175,6 +154,9 @@ Our first project ...</p></div>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
+      <li class="post">
+          <a href="/cmuke-cheng-xin-xi-zheng-li.html">CMU课程信息整理</a>
+      </li>
       <li class="post">
           <a href="/mit-6828_lab-1.html">MIT-6.828_Lab-1</a>
       </li>
@@ -186,9 +168,6 @@ Our first project ...</p></div>
       </li>
       <li class="post">
           <a href="/jie-jue-pelican-quickstartchu-cuo-wen-ti.html">解决pelican-quickstart出错问题</a>
-      </li>
-      <li class="post">
-          <a href="/shi-yong-readthedocszheng-li-wen-dang.html">使用readthedocs整理文档</a>
       </li>
     </ul>
   </section>

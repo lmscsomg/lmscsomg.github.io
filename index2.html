@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>解决pelican-quickstart出错问题 &mdash; Victor's blog</title>
+  <title>Victor's blog</title>
   <meta name="author" content="Victor">
 
 
@@ -41,46 +41,57 @@
 </ul></nav>
   <div id="main">
     <div id="content">
-<div>
-  <article class="hentry" role="article">
+<div class="blog-index">
+  		<article>
 <header>
-      <h1 class="entry-title">解决pelican-quickstart出错问题</h1>
+      <h1 class="entry-title">
+        <a href="/shi-yong-readthedocszheng-li-wen-dang.html">使用readthedocs整理文档</a>
+      </h1>
     <p class="meta">
-<time datetime="2015-03-13T23:37:00+08:00" pubdate>Fri 13 March 2015</time>    </p>
+<time datetime="2014-10-26T00:00:00+08:00" pubdate>Sun 26 October 2014</time>    </p>
 </header>
 
-  <div class="entry-content"><p>博客框架pelican更新后，在目录下执行<code>pelican-quickstart</code>会报错：</p>
-<div class="highlight"><pre><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">html_parser</span>
+  <div class="entry-content"><p>最近用<a href="https://readthedocs.org/">Read The Docs</a>整理笔记，感觉还不错，同时，<a href="https://github.com/snide/sphinx_rtd_theme">sphinx主题</a>对移动端的支持非常好。将整个文档部署到github上，我就可以随时随地查阅，非常方便。</p>
+<p>Read The Docs支持Markdown格式，我自己用了下，感觉配套主题没有使用reStructuredText格式的配套主题效果好。reStructedText相对于Markdown而言，也更为强大，唯一的缺点就是没有类似Mou这样的配套应用（用Mou写Markdown着实方便啊）。</p>
+<!--more-->
+
+<p>这里记录一下将本地文档部署到github上出现的问题：如果按sphinx主题的Readme教程，本地完全没有问题，但是在readthedocs部署时会报错，会报如下错误:</p>
+<div class="highlight"><pre><span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">sphinx_rtd_theme</span>
 </pre></div>
 
 
-<p>我的环境是:</p>
-<div class="highlight"><pre><span class="n">OS</span> <span class="n">X</span> <span class="n">Yosemite</span> <span class="p">(</span><span class="n">Version</span> <span class="mf">10.10.2</span><span class="p">)</span>
-<span class="n">python</span> <span class="mf">2.7.6</span>
+<p>看github上的Issues列表，貌似是本地和部署到Read The Docs会有冲突(因为readthedocs默认使用这个主题？)，所以我们需要在<code>config.py</code>里进行判别。</p>
+<div class="highlight"><pre><span class="n">import</span> <span class="n">sphinx_rtd_theme</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s">&quot;sphinx_rtd_theme&quot;</span>
+<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">sphinx_rtd_theme</span><span class="p">.</span><span class="n">get_html_theme_path</span><span class="p">()]</span>
 </pre></div>
 
 
-<p>原因可能是与python 2.7的兼容问题,在<code>/Library/Python/2.7/site-packages/pelican</code>下修改<code>readers.py</code>即可(<strong>注意要先修改readers.py的权限</strong>):</p>
-<div class="highlight"><pre><span class="cp">#from six.moves.html_parser import HTMLParser</span>
-<span class="n">from</span> <span class="n">HTMLParser</span> <span class="n">import</span> <span class="n">HTMLParser</span>
-</pre></div></div>
-    <footer>
-<p class="meta">
-  <span class="byline author vcard">
-    Posted by <span class="fn">
-        Victor
-    </span>
-  </span>
-<time datetime="2015-03-13T23:37:00+08:00" pubdate>Fri 13 March 2015</time>  <span class="categories">
-    <a class='category' href='/category/configuration.html'>configuration</a>
-  </span>
-  <span class="categories">
-    <a class="category" href="/tag/pelican.html">pelican</a>,    <a class="category" href="/tag/bugs.html">bugs</a>  </span>
-</p><div class="sharing">
-</div>    </footer>
-  </article>
+<p>上面是本地上执行时用的，如果要在Read The ...</p></!--more--></div>
+  <footer>
+    <a rel="full-article" href="/shi-yong-readthedocszheng-li-wen-dang.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/dijkstra-algorithm-optimization.html">Dijkstra Algorithm Optimization</a>
+      </h1>
+    <p class="meta">
+<time datetime="2014-03-19T16:57:39+08:00" pubdate>Wed 19 March 2014</time>    </p>
+</header>
 
-</div>
+  <div class="entry-content"><p>I chose a course called "Programming Design And Algorithm Discussion" this semester.We twenty seven students were divided into nine groups and each group was required to do a thesis presentation after reading several papers about the unique project.I think this course may be very wonderful!
+Our first project ...</p></div>
+  <footer>
+    <a rel="full-article" href="/dijkstra-algorithm-optimization.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+<div class="pagination">
+
+    <a class="next" href="/index.html">Newer &rarr;</a>
+  <br />
+</div></div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>

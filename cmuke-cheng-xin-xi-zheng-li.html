@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CMU课程信息整理 &mdash; Victor's blog</title>
+  <meta name="author" content="Victor">
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">Victor's blog</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+
+<ul class="main-navigation">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">CMU课程信息整理</h1>
+    <p class="meta">
+<time datetime="2015-04-11T00:00:00+08:00" pubdate>Sat 11 April 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>我目前看到的对于计算机课程Lab的推荐(不是网易云课堂或者Coursera看视频的那种)，都是MIT和Standford这两所学校的，遂很好奇CMU这所计算机顶级学府(Orz...求收留)所开设的课程，在github上搜索到了对于部分课程的整理，见下面的<strong>附</strong>。</p>
+<h2>一些感想</h2>
+<p>我是大二时从一位牛人简历里才发现其实可以跟国外高校的Lab的（原谅我那时见识短浅并且还没开始上知乎= =。），他是在MIT-6.828基础上做了一个操作系统，当时感觉就是好酷炫orz......</p>
+<p>因为对分布式计算感兴趣，遂在去年准备跟MIT-6.824的Lab，Go语言开发，涉及paper阅读，工程量也很大，从schedule的时间排布来看，估计又是一个需要天天熬夜的Lab，然后因为自己这边的很多事，整个Lab搁置了......(其实就是拖延症好嘛= =。)</p>
+<p>然后今年才算真正跟了MIT操作系统的Lab，整个Lab1花了一整个下午和晚上，这还是在有参考的情况下，并且Lab1给了相当多的提示。整个Lab的题目难度，感觉循序渐进，像是在探险一样，并且是环环相扣的，没想到做计算机的Lab也能这么刺激。</p>
+<p>做完Lab1感慨真的是非常非常多啊，国内外计算机本科教育的差距真是......我引用<strong>附</strong>中的一些上过CMU课程的同学的话，即可窥见一二了：</p>
+<h3>从代码量而言：</h3>
+<h4>有这个样子的：</h4>
+<blockquote>
+<p>代码量差不多一万多行C的样子，但是重要的是debug真心恶心，各种race condition呀，GDB一行一行的找BUG。总的来说是很好的一门课，Dave能把这么OS这么老技术的课讲得这么interesting十分难得。而且可以让你对concurrency的理解上升一个层次，上完以后就感觉没有自己debug不出的bug了（显然是个幻觉哈 ：D）。</p>
+</blockquote>
+<h4>还有这样的：</h4>
+<blockquote>
+<p>第三个project是写一个mapreduce框架外加一个类似hdfs的文件系统，大概工作量是三周时间，两个人搞一万行Java出来。</p>
+</blockquote>
+<h4>这样的：</h4>
+<blockquote>
+<p>Project里比较好的一个就是写一个MapReduce framework with the underlying file system。我们当时写了9000多行JAVA，感觉还是很有成就感的，虽然基本上任何OPTimization都没有做。</p>
+</blockquote>
+<h4>paper怎么少的了：</h4>
+<blockquote>
+<p>每周三四篇paper review再加一个一学期的大项目</p>
+</blockquote>
+<h3>做Lab时你是这样的：</h3>
+<blockquote>
+<p>从course load上来讲... 410是那种会让你菊花天天盛开的节奏。P0（Project 0）和P1我是速度全开，就是从起床到睡觉，全部时间都用上，但还好没怎么熬夜，感觉“充实”；从P2开始，不仅是身体上开始觉得疲劳，心理上的折磨也渐渐显露（例如due之前一两天还有各种令人绝望的bug），开始胡思乱想诸如“艹，P3该怎么办”之类的事情；到了P3，尤其是中期，基本就是天天熬夜，而且比P2更加容易焦虑急躁；什么drop之类的想法也开始显现；后期的时候，幸好调整及时，已经开始适应，天天两三点也就是身体上累一些，从与partner的配合，到自身的coding/debug已经感觉有了一些套路和进步。后面其实还有个P4（算是“饭后甜点”，总共占5分），不过作为一个小弱，在P3上犯了个错误，被教授勒令继续完善P3，所以无缘P4。期中考试主要考察P2的东西，各种lock/mutex/condition varialbe/sync之类，比较难；至于期末考。。。我真心觉得这辈子至今为止没被虐过这么惨。</p>
+</blockquote>
+<p>最好的老师，顶级的Lab，还有一点是他们的课程知识真的是与时俱进啊，我看了他们分布式系统的schedule，其中包含了对Spark系统的paper，开发语言使用是Go（前几天看到微博上一位做数据库的大牛也感慨UC berkeley开设的数据库的Lab使用到的技术都是最前沿的），从这样课堂里出来的学生不牛就怪了。知乎上的CMUer说熬夜已经是常事了，牛逼都是一点一点熬出来的啊。</p>
+<p>至于国内，咳咳.....(变相点名就不说了，三次不到取消考试资格，想翘课做个稍微有点觉悟的学生都难╮(╯_╰)╭)</p>
+<p>最后，求CMU明年收留我orz......</p>
+<hr />
+<h1>附：</h1>
+<h2>08722 – Data Structurefor application programmers</h2>
+<p>这门课主要是开给EBIZ和MISM的，在MISM那边的课号是95772. 但是很多ECE, INI的同学，以及咱ME转CS帮都在上这门课。这门课只有半学期，一共6个credits，相当于1.5学分。内容非常基础，但是我觉得帮助挺大的，对于非CS科班出身想转CS的同学非常建议上一下， 基础越弱收获越大，要是基础比较硬的话就不用上了。LZ上的其它CS的课几乎都是各种牛校的PHD出身，这门课的老师好像都没有PHD学位，肯定没法去上15的课，但是讲课挺用心，讲的也很清楚。讲课这东西真的不是老师自己越牛就讲的越好。尤其数据结构这种比较基础的内容。这门课从最简单的内容讲起，包括array, arraylist, linked list, stack, queue,sorting(bubble, selection, insertion, merge, quick, heap), hashTable, hashMap,hashSet, BST, TreeMap, TreeSet, Huffman coding, Heap. 每周一次quiz, lab, homework。讲的时候内容都围绕Java Collection 来讲，还涉及与collection有关的comparator, iterator 等内容。这门课完全就是针对面试的，作业要求先手写代码（虽然大部分时候都是先ECLIPSE敲好再抄到纸上的）。</p>
+<p>6次homework，前面的非常简单，后面稍微麻烦一点，难度都不大，就是让你去熟悉这些数据结构能自己implement，也能用JAVA COLLECTION。</p>
+<ol>
+<li>自己implement 一个 arraylist 实现各种要求 </li>
+<li>Queue, stack 的implement和应用 </li>
+<li>写一个sorted linkedlist， 要求全部用recursion，不能有任何循环。 </li>
+<li>自己设计implement一个 hashTable </li>
+<li>Java HashMap的运用 </li>
+<li>Implement 一个binary search tree. 各种操作，以及运用。 包括traverse等，要求traverse必须iteratively 。</li>
+</ol>
+<p>作业扣分比较狠，给的test只包括了常规的CASE，要求你自己去想CORNER CASE，因为面试的时候也没人会跟你说要考虑哪些corner case。
+6次quiz，时间有一点紧，有些代码填空题，并不是特别容易拿高分，比如第一次quiz最后考了一个在unsorted的数列里面利用binary search找local minimum的变种，在不到20分钟时间做完前面的题之后，要是之前没见过也没那么快就想的出来。其他题目包括reverse a linked list, reverse a linked listrecursively, 写 iteratively 的 merge sort 等等。
+期末考试时间比较紧，题目有O(N)的recursive的Fibonnaci, 用两个长短数组实现没有latency的arraylist，写Huffman coding, rotate过的数组里面的binary search等。不算特别难，但是时间太紧，大家分都不高。</p>
+<p>个人感觉这门课上下来帮助挺大的，比如LZ以前对hashtable之类的说起来也都知道，但是具体的implementation没有搞清楚，hashFunction怎么选。Collision 怎么处理，open addressing,还是linked list。上完之后要清楚不少。 还有像BST这种，说起来谁都会，但是让你写一个BST的class,实现 insert, delete, search等。你能写出bug free的么，我觉得大部分非科班出身的都困难，光一个delete估计就很难保证。甚至让你立马写一个bug free的 merge sort, quick sort可能都不一定。所以上一上这门课感觉还是挺有帮助的。</p>
+<h2>02713- Algorithms &amp; Data StructureFor Scientists</h2>
+<p>这门课的老师是以前在U MARYLAND 教算法的，前两年来了CMU的Computational Biology 系，CMU的算法早有牛人一直在上了就在computational biology系下开了这门算法课。选这门课也是实属无奈，说实话对于CMU转CS找工作的同学来说，CMU目前还真没有一门特别适合的算法数据结构的课。15451 Algorithm design &amp; analysis 不讲数据结构不编程，都是各种证明，各种数学，而且难度很大，远大于面试可能考到的难度。15210 倒是数据结构+算法，而且有编程，但是使用的语言是 CMU 自制的函数式编程语言SML，另外并行的算法讲的比较多。这门课WORKLOAD也比较重，再加上你需要自学SML，并行的算法目前来看考察的也不是特别的多，LZ权衡之后没有选这门课。。
+上了这门02713以后发现其风格跟15651基本一致，大量的证明与数学。编程作业一共两次，用PYTHON写。
+内容包括
+1、“简单”图论算法： minimum spanning tree(prim’s, kruskal’s etc.) BSFS,DFS , Dijkstra , A*, Bellman Ford, Topological sorting.
+2、 Divide &amp; Conquer: closest pair of points,inversion count..
+3、splay tree 
+4、Dynamic Programming 
+5、Network Flow 
+6、Linear &amp; Integer Programming 7、 NPC problem</p>
+<p>作业和考试都是围绕这些内容的算法设计和证明，比如让你证明如果一个图里有多个minimum spanning tree的话，那么他们的边的权重的序列一定相同。讲课的时候也是会花很多的时间来证明为什么splay tree是amortized O(log n). 之类的问题。总之比较数学。
+编程作业刚布置了第一次，以 Minimum Spanning Tree 做 heuristic 用 A* 的思路做 TSP 的算法，看了一下感觉还是要花一些时间的，特别是LZ这种之前不会PYTHON的人。</p>
+<p>另外虽然名字里有data structure 但其实基本没有讲，除了splay tree 以外，就讲MST 的时候讲了一点heap和union   find data structure.
+这门课对找工作的直接帮助可能也不是特别大，据说面试的时候图论的算法基本也就是个 BFS,DFS . Dijkstra 都不太可能有， 更别说什么 Bellman Ford, A*了。但是上上这门课对一些算法思想的认识上还是有提升的，再加上现在美国这边的算法普遍就是这个风格。在CMU没有其它更合适的算法课的情况下选这门02713还是可以的。另外MISM有一门自己的算法课95771据说不错，难度适中也有编程，但MISM的课外系一般选不上，不过有一名ME的同学发邮件给老师哭诉然后就选上了….以后的同学可以借鉴一下…</p>
+<h2>15214 – Principle of Software Construction – Object,Design &amp; concurrency</h2>
+<p>说点题外话 c++已经在CMU失宠很多年了，除了computer graphics以外，好像CS系的课没有用C++的了。不过其实JAVA也早就失宠了，这门15214就是为数不多的还在用java的课。CMU已经把面向对象的概念从CS学生的必须内容中除去了。现在CMU流行的就是函数式编程，成为了必修，以及各种系统级编程，并行等等。C是CMU永恒的宠儿。
+选这门课的原因是因为觉得design patterns 很重要。
+这门课的内容包括主要三个部分，第一部分是面向对象的一些概念，inheritance, polymorphism 等等。第二部分是 design,第三部分是并行系统。
+CMU的特点是本科生的课不断在变，这门15214开设时间并不长，课程质量跟开了十几年的213确实有差距。作业还算比较有趣，量适中，比213要稍微轻松一点。
+以这次的作业为例，要求完成一个scrabble game，包括三个部分，第一部分要求做面向对象的分析与设计，用UML 画domain model, object model , interaction diagram等等。 第二部分Implementation和第三部分的GUI。 要求在设计和实现中考虑和运用design patterns。
+这门课有两个老师，到目前为止部分的课是一个德国人老师讲的，他讲课基本上来说就是nightmare级，组织混乱，表达不清。这门课的PPT做的也很烂，上课基本听不进去。导致LZ在第一次期中之后，感觉除了作业以外，好多东西都没学清楚，只能找时间看书了。目前考过一次期中，个人感觉题目比较简单，考完结果也还不错，不过貌似大部分同学分都不高，不知道是不是这货讲课的结果。</p>
+<h2>24787 – Artificial Intelligence &amp; Machine Learningfor Engineering Design</h2>
+<p>ME系的machine learning课。这门课其实还不错，老师讲的挺好的，课程压力不是特别大，也比较容易拿A。TOPIC 包括常规的decision tree, pattern recognition (主要是bayesian), neural networks, clustering, PCA,SVM, genetic algorithms, 和一些优化算法。作业刚开始做还有一点难度，如果编程基础差的话。比如第一次完整写一个decision tree，刚入学的时候做还是有点蛋疼。第二次作业的狄利克雷分布也有一点难，最后只能靠助教给的公式了。。不过作业的难度后面反而降低了。上这门课作为对machine learning的一点初步的认识的话还是不错的。有同学把这门课和machine learning 系的10601 machine learning都上了，说前半学期这门课作业难度还大一点，不过后半学期就不如601了。建议秋季上，老师讲的挺好的，不过春季学期他把他的PHD扔去讲课了.. ，就呵呵了。</p>
+<h2>15415/615 Database Applications</h2>
+<h3>1</h3>
+<p>这门课把数据库的内外原理与实现都讲到了。例如，从设计和应用（E-R图，SQL）到数据库理论（RelationalAlgebra/Calculus），再到内部实现的原理（数据库如何上锁，如何建立和选择合适的Index，Write-Ahead Logging是怎么回事）等很多内容，所以非常适合数据库领域的入门学习。课程负担很小，一共8个作业，两次考试。8个作业里面有两个是编程的，大概需要花个一两天，其它的都是一个晚上。从作业到考试，再到最后的成绩，给分一般都很高，所以只要你认真学，拿A没有问题。老师是Christos和Andy，都很nice，有亲和力。前者据说是Data Mining界的大牛逼，后者是数据库界冉冉升起的新星（研究方向包括了NewSQL和H-Store），所以如果想在相关领域做研究，上这个课或者TA这个课也不失为一个非常好的接触老师的机会。这门课无疑是性价比很高的课，内容不错，负担轻，可以和负担重的课（例如OS）搭配起来上。</p>
+<h3>2</h3>
+<p>这个课其实并不是很system的课，但是我推荐上这门课是因为数据库里涉及的ACID related topics和fault tolerance比较普适，在下面我要提到的一些课程中，这些知识会被一次又一次的重复，但是感觉都没有在这门课里花的时间多，所以我觉得这门课是在这方面打基础的最好课程。其他的知识，比如SQL，B Tree，都是基础知识呀，你要是不懂这些你都不要意思说是从CMU毕业的不是。而且今年的新老师Andy作new sql数据库和main memory database很厉害的呀，也是后面我要提到的advanced topics in database system的老师。</p>
+<h2>15746/18746 Advanced Storage Systems</h2>
+<p>这门课是CMU比较特色的一门课，因为据老师说专门讲Storage的课在其他学校并不算常见。这里的Storage并非指底层的磁盘，而是指存储作为一个SoftwareSystem是如何实现和运作的。底层原理也有涉及，但只有一两节课。略上层一些的内容，会讲到Local FileSystem，例如Ext2。个人觉得这个也不是太有意思，要处理太多的bitsand bytes，不过作为IT领域的人，了解一下很有必要。第一个project就是给Ext2文件系统写一个简单的file system checkutility（大概1000行C）。再往上层的内容就更多一些，包括分布式文件系统与并行文件系统。这些文件系统一般构建在user space，所以不需要直接处理bits and bytes，也不用做kernelspace debugging，而是利用已有的本地文件系统，例如Ext2，在上层构建自己的filesystem。第二个project就是这个类型，在Ext2的基础上构建一个cloud file system，分为三个部分：part1，实现一个简单的文件系统，把小文件放在本地，大文件传到云端；当然，所有操作对于用户来说必须是透明的；part2，实现de-duplication，节省云端的花费（云端存储是要钱的）；part3，实现一个cache，自己琢磨一个cache policy让云端花费进一步减小。代码量大概是2000-3000行C或C++。讲课的老师是CMU的两个大牛逼，GarthGibson和Greg Ganger。他们都在PDL实验室，对INI和VLIS的学生感觉还挺友好，因为很多这两个program的学生在那里做research；这门课的TA也差不多被INI的人包揽了。总体来说质量不错，难度适中，推荐。</p>
+<h2>18842 Distributed Systems</h2>
+<p>这门课在INI和ECE的评价向来很差，到底有多蛋疼请自行体会。其实课程内容还行，主要是老师和大多数TA的水平不行。这门课是MSIN的必修课，所以无论如何MSIN的同学也得熬过去。应付这门课的tips有如下几点（仅根据Spring2014的经验，后面会不会改不知道）：（1）Live Session一定要认真参加，里面讲的练习题会出现在考试里；（2）想办法搞到Spring2013的Lecture Slides，备考的时候Slides能背多少背多少，然后再复习一下Live Session上的题就可以了。从Spring2014开始，Slides非常精简，对复习帮助不大；（3）考完Quiz之后一定要去ECE Hub拿试卷和答案，因为Quiz的原题会出现在期末考试上；（4）Lab和Project都是随机组队，随到不靠谱的人概率还挺大 - 认真你就输了，关键就是Demo的那15分钟。Demo不会太细致，主要考察一下功能和简单的cornercase。</p>
+<h2>15410 Operating System</h2>
+<h3>1</h3>
+<p>extremely challenging的一门课（我觉的同等难度的课在CMU还有个两三门，例如compiler，15412）。基本上就是一个学期写一个可以用的，但是极其简陋的操作系统。头两个project相对简单。project 2是写一个user level thread library，project 3是写一个kernel，project 4每年都会有点变化好像，一般是写多核或者unix signal。代码量差不多一万多行C的样子，但是重要的是debug真心恶心，各种race condition呀，GDB一行一行的找BUG。总的来说是很好的一门课，Dave能把这么OS这么老技术的课讲得这么interesting十分难得。而且可以让你对concurrency的理解上升一个层次，上完以后就感觉没有自己debug不出的bug了（显然是个幻觉哈 ：D）。缺点就是上完这门课你依旧不知道真的OS是怎么做的。。。所以只能算是OS的入门课程，如果想做OS这个课一定要选，但是上完之后还要选一些更高级的OS课（感觉除了15412，CMU好像没什么这种课。。。我没有仔细研究过，所以我觉的唯一的办法就是去读kernel了。。。18648 real-time embedded system涉及些linux kernel hacking，但是主要是scheduling，lock和file system这部分，感觉还是很浅，也许唯一的办法就是去APPLE/ORACLE/Google作OS了）</p>
+<h3>2</h3>
+<p>简单一句话：Just Take It。附加条件：如果你对OS，System Programming感兴趣，想更深入了解的话。再附加一个温馨提醒：如果选了这个，其它课就别选太重了，除非有这方面的天赋/背景/经验。</p>
+<p>其实到底选不选OS，每个人都有不同的想法。OS并非对找工作/实习有什么神奇效果，毕竟现在大多数公司都在做上层/Web/Cloud之类，对System方面考察的不多；System方面的公司一个是数量少，再就是要求也比较高。不选OS的原因大多在，没兴趣，对找工作没用，以后不想从事这个方面以及觉得太难，这几个方面。其实我觉得这些考虑还是非常有必要的（所以上面有“附加条件：...”），兴趣不在，选了的话也是折磨；况且即使顺利过关，以后搞不好面试的公司看你有这方面的经验，就想把你往这方面的岗位上放。我个人来讲还是挺想了解一下OS的，算是弥补一下CS方面的基础。</p>
+<p>撇开所有的外在考虑，就这门课本身质量来讲，的确是非常非常值得体验的。从教授到TA，每个人都有非常厉害的背景。今年更是有个亮瞎狗眼的TA，名叫George Hotz... 每次project上交之后，course staff都会把code打印出来，替每个人/每个组仔仔细细进行批改和阅读，并且用红笔把修改建议写在code边上（包括Kernel Project，8000 - 10000行左右 - 不算太多？的确是，但Design和Debug绝对绝对会把你弄疯掉）。每周工作日基本都有office hour；上半学期主要讲解基础知识，后半学期是稍微“高级”一些的topic（google：15410）。整个课程给我的感觉之一是，如果老师没有一定的水平，这个课根本没办法开设。</p>
+<p>从course load上来讲... 410是那种会让你菊花天天盛开的节奏。P0（Project 0）和P1我是速度全开，就是从起床到睡觉，全部时间都用上，但还好没怎么熬夜，感觉“充实”；从P2开始，不仅是身体上开始觉得疲劳，心理上的折磨也渐渐显露（例如due之前一两天还有各种令人绝望的bug），开始胡思乱想诸如“艹，P3该怎么办”之类的事情；到了P3，尤其是中期，基本就是天天熬夜，而且比P2更加容易焦虑急躁；什么drop之类的想法也开始显现；后期的时候，幸好调整及时，已经开始适应，天天两三点也就是身体上累一些，从与partner的配合，到自身的coding/debug已经感觉有了一些套路和进步。后面其实还有个P4（算是“饭后甜点”，总共占5分），不过作为一个小弱，在P3上犯了个错误，被教授勒令继续完善P3，所以无缘P4。期中考试主要考察P2的东西，各种lock/mutex/condition varialbe/sync之类，比较难；至于期末考。。。我真心觉得这辈子至今为止没被虐过这么惨。</p>
+<p>可能我的叙述还是比较平实，下面是Quora的一个讨论，里面有提到410的，供大家参考：
+http://www.quora.com/Carnegie-Mellon-University/What-are-the-best-courses-at-CMU</p>
+<h2>15440/640 Distributed System</h2>
+<h3>1</h3>
+<p>这个课是想做分布式系统的入门课，主要是介绍所有关于distributed system的基础知识，包括网络，RPC, commit protocol，distributed file system，fault tolerance等内容。这个课有两个版本（Greg Kesden和David Anderson）。喜欢两个版本的人都有，我个人感觉因为David Anderson实际上在做这方面的research，他的版本会更系统介绍的更全面，但是Greg这个人很有意思哈，不喜欢他的人一上课就头痛，喜欢的人就觉的他蛮搞笑的，大家就自己选择吧。我个人可能更喜欢David Anderson的风格，但是我上的是Greg的版本。Project里比较好的一个就是写一个MapReduce framework with the underlying file system。我们当时写了9000多行JAVA，感觉还是很有成就感的，虽然基本上任何OPTimization都没有做。Anyway，强烈推荐上一下这个课。</p>
+<h3>2</h3>
+<p>这门课有两个版本，Kesden和Anderson。我上的是Kesden版本。Kesden在CMU也算是人人都知道的老师了吧，有人不喜欢，有人爱，讲课风格非常energetic。Kesden比较注重对idea和整体概念的理解，考试也多半是这种题目，或者design的题目，只要能扯就不会分数太低。前两个project很简单，略过。第三个project是写一个mapreduce框架外加一个类似hdfs的文件系统，大概工作量是三周时间，两个人搞一万行Java出来。绝大多数人的设计都是参考了Hadoop和HDFS的，写完之后对它们的理解也会更加深刻。第四个project是并行计算领域的，用MPI去写一个K-Means算法。Anderson据说讲课非常好，project和Kesden版本的完全不一样，用的是Go。</p>
+<h2>15719 Advanced Cloud Computing</h2>
+<h3>1</h3>
+<p>在CMU有两门cloud computing的课，15619和15719。我没有上过15619，但是感觉619完全是engineer方面，换句话说, Amazon EC2 API培训课，但是个人感觉也是很好的。15719相比619更偏向系统设计方面，上课主要是读一些新的论文，比如说YARN， Dapper等比较新的系统。project方面因为这门课实在是太新了(去年是第一年开)，所以不是很well designed。我上的时候用的是Open Stack，感觉也是API培训的感觉，但是我感觉收获最大的还是读那些论文，让我对cloud领域新的趋势有了一定的了解，十分开阔眼界。而且课程load不是很重，所以建议想接触一些cloud方向新知识的选择这门课。上完这门课后如果你是VLIS专业的可以选择 15648 Studio Big-Data System。这门课和15719风格很像，也是读paper写project，load也差不多，我个人比较喜欢。如果不是VLIS的同学基本上就选不进15648这门课了。. 鍥</p>
+<h3>2</h3>
+<p>通读老师布置的云计算方面的经典论文，外加两个Project，一个在AWS上做，一个在OpenStack上做。这门课Fall 2013刚开，不知道以后会不会有。上完之后对云计算的各个方面都会有比较深的understanding，但是由于刚刚开设，project不是太完善。</p>
+<h2>15799 Advanced topics in database system</h2>
+<p>Andy在CMU新开的课，强烈推荐，涉及数据库研究的各个领域，第一节课是Paxos，学过分布式系统的人都知道Paxos或者类似协议现在可以说是作分布式系统中实现replica，fault tolerance的基础了。随后的课程就是在每个topic上读几篇paper，NO-SQL， NEW-SQL， Streaming System等等等等。如果想做cloud system和database的同学这门课一定不能错过的，绝对开阔眼界。但是感觉load稍微有点重，每周三四篇paper review再加一个一学期的大项目。不过绝对物有所值的课程！</p>
+<h2>15749 Engineering Distributed System</h2>
+<p>说实话这个课是我在CMU的最爱哈，强烈推荐！！！老师是Satya，他也是AFS和Coda file system的主要设计者。首先要说的是不要被这门课15410 B作为prerequisite的要求吓到，只要有良好的C基础（要比15213的C基础好才行），这个课并不是extremely hard。这门课涉及到了所有实现分布式系统中的问题，从caching， consistency model，prefetching，到content addressable storage（data deduplication），再到fault tolerance等，可以说涵盖了大部分你需要知道的分布式知识。更好的一点是Satya经验实在是太丰富了，所有这些topics听着他娓娓道来，怎样考虑各种现实问题，在什么条件下要使用什么策略，绝对受益匪浅，对今后设计系统有很大帮助。虽然如果你上过前面我提到的这些课，很多知识你都已经学过了，但是Satya的讲解肯定会加深你对这些知识的理解。project方面也很有意思，其中的两个是在coda file system中加一些feature。建议喜欢分布式系统的同学必选呀！</p>
+<h2>11441/641 Search Engines and Web Mining</h2>
+<p>整个课程分为两个部分，前半学期讲search engine（Jamie Callan），后半学期讲web mining（Yiming Yang）。其实内容还不错，可以扩大你在Information Retrieval和Machine Learning方面的知识。整个课程的组织就像两门mini，前半和后半学期的老师和助教都不一样，完全分开。我对前半学期的内容还是挺感兴趣的，老师讲得也好，主要告诉你search engine的内部原理，并且通过三次homework自己一步一步搭建一个search engine。后半学期的就蛋疼了，真有种手贱选了这课的感觉。内容全部都是数学，这个没办法，毕竟涉及的知识领域和数学太密切；槽点是在老师，真的没法听懂她上课到底在讲什么。今天上午刚考完final，大多数都是公式推导和记忆。我花费了很多时间去理解idea，理解大概念，结果没考多少。往后这门课就没有了，被拆分成两门，11-642 Search Engines和11-643 Scalable Text Analysis。强烈建议选一下11-642，对扩充自己的知识面和面试都非常有用，选不选后者就看自己的兴趣和数学功底了。</p>
+<h2>15619 Cloud Computing</h2>
+<p>这门课全部online，可以按照自己的步调来。没有期末考试，全部都是在线quiz和project。难度不大，阅读量挺大。所有Cloud Computing涉及的领域，从底层的Virtualization，到上层的Programming Paradigm，全部都有讲到，而且讲义写的非常好。从Fall 2013开始，15-619（12学分）会比15-319（9学分）多一个project。</p>
+<h3>附录部分参考地址在<a href="https://github.com/Ulu2005/CMU_CS_Course_Info/blob/master/course.md"><strong>这里</strong></a></h3></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Victor
+    </span>
+  </span>
+<time datetime="2015-04-11T00:00:00+08:00" pubdate>Sat 11 April 2015</time>  <span class="categories">
+    <a class='category' href='/category/study.html'>study</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/course.html">course</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="/cmuke-cheng-xin-xi-zheng-li.html">CMU课程信息整理</a>
+      </li>
+      <li class="post">
+          <a href="/mit-6828_lab-1.html">MIT-6.828_Lab-1</a>
+      </li>
+      <li class="post">
+          <a href="/mit-6828ke-cheng.html">MIT-6.828课程</a>
+      </li>
+      <li class="post">
+          <a href="/yi-xie-lao-tao.html">一些唠叨</a>
+      </li>
+      <li class="post">
+          <a href="/jie-jue-pelican-quickstartchu-cuo-wen-ti.html">解决pelican-quickstart出错问题</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="/category/blog.html">blog</a></li>
+        <li><a href="/category/configuration.html">configuration</a></li>
+        <li><a href="/category/life.html">life</a></li>
+        <li><a href="/category/study.html">study</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="/tag/lao-tao.html">唠叨</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/mit-6828.html">MIT-6.828</a>,    <a href="/tag/algorithm.html">algorithm</a>,    <a href="/tag/readthedocs.html">readthedocs</a>,    <a href="/tag/bugs.html">bugs</a>,    <a href="/tag/course.html">course</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2014&ndash;2015  Victor &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</body>
+</html>
